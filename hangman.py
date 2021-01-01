@@ -2,12 +2,11 @@ import pygame
 import math
 import os
 import random
-#window setup
+
 pygame.init()
 pygame.display.set_caption("Hangman")
 window = pygame.display.set_mode((750,500))
 
-#buttom variables
 
 radius  = 20
 gap = 15
@@ -27,7 +26,6 @@ for i in range(26):
 font = pygame.font.SysFont('comiscans', 40)
 word_font = pygame.font.SysFont('comiscans', 60)
 
-
 #load image
 
 image = []
@@ -35,11 +33,8 @@ for i in range(7):
     load_image = pygame.image.load(os.path.join("C:/Users/srinivasan/Desktop/project","hangman"+str(i)+".png"))
     #print(load_image)
     image.append(load_image)
-print(image)
+#print(image)
    
-#
-    
-
 # hangman status
 
 h_status = 0
@@ -47,22 +42,12 @@ words = ["HELLO","DEVELOPER","PYTHON"]
 word = random.choice(words)
 guessed = []
 
-
-
-
-
-#setup loop
-
 clock = pygame.time.Clock()
 run = True 
 
-
 def draw():
     window.fill((69,24,70))
-    #draw title
     
-    
-    #draw word
     display_word = ""
     for l in word:
         if l in guessed:
@@ -71,8 +56,6 @@ def draw():
             display_word += "_"
     text = word_font.render(display_word, 1, (255,255,255))
     window.blit(text,(400,200))
-    
-    #draw button
     
     for l in letter:
         x,y,let,visible = l
@@ -88,8 +71,6 @@ def draw():
 
 while run:
     clock.tick(60)
-    
-    
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
