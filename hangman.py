@@ -30,7 +30,7 @@ word_font = pygame.font.SysFont('comiscans', 60)
 
 image = []
 for i in range(7):
-    load_image = pygame.image.load(os.path.join("C:/Users/srinivasan/Desktop/project","hangman"+str(i)+".png"))
+    load_image = pygame.image.load(os.path.join("C:/Users/project","hangman"+str(i)+".png"))
     #print(load_image)
     image.append(load_image)
 #print(image)
